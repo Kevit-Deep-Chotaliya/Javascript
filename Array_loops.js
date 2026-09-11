@@ -110,3 +110,28 @@ let finalArray = numbers.reduce((val1,val2) => {
     return val1.concat(val2)
 },[])
 console.log(finalArray)
+
+console.log(typeof(numbers))
+
+console.log(typeof(null))
+
+//Looping through objects
+
+const school = {
+    students : {
+        student1 : {
+            name : 'abhay',
+            age : 20
+        },
+        student2 : {
+            name : 'helly',
+            age : 18
+        }
+    }
+}
+
+console.log(school)
+
+for (let stu in school.students) {
+    console.log(`${stu} : ${school.students[stu].name}`);
+}
