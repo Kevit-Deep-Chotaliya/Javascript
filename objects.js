@@ -317,4 +317,3 @@ console.log(company_name);
 console.log(product_count);
 console.log(year);
 
-
