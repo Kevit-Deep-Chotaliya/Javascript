@@ -157,3 +157,79 @@ login()
     .catch((error) => {
         console.log(error);
     })
+
+
+//Promise.all() - Promise.all() is used when we have multiple independent Promises and we want all of them to complete, but we don't care which one finishes first.
+//suppose we want Dashboard data where we fetch several independent pieces of data at the same time.
+
+const getUserData = () => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve('user profile');
+        }, 2000);
+    });
+};
+
+const getOrders = () => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve('User orders');
+        });
+    });
+};
+
+const getNotifications = () => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve('User notifications');
+        });
+    });
+};
+
+Promise.all([getUserData, getOrders, getNotifications])
+    .then((results) => {
+        console.log(results);
+    })
+    .catch((error) => {
+        console.log('error');
+    });
+
+// If any one Promise rejects, Promise.all() immediately rejects
+// and the .catch() block handles the error.
+
+
+const getMenu = () => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve('Menu loaded');
+        }, 1000);
+    });
+};
+
+const getAddress = () => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve('Address loaded');
+        }, 2000);
+    });
+};
+
+const checkPayment = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject('Payment verification failed');
+        }, 1500);
+    });
+};
+
+Promise.all([
+    getMenu(),
+    getAddress(),
+    checkPayment()
+])
+    .then((results) => {
+        console.log(results);
+    })
+    .catch((error) => {
+        console.log('Error:', error);
+    });
