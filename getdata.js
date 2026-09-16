@@ -117,4 +117,3 @@ const createProduct = async () => {
 }
 
 createProduct();
-feat: add GET and POST request examples using fetch and async/await
