@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Favourite Movie Franchise</title>
+    <script src="app.js" defer></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: linear-gradient(
+                to bottom,
+                #0d1113,
+                #40566a
+            );
+
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 665px;
+            padding: 42px 40px;
+            
+            border: 3px solid #aeb6b9;
+            border-radius: 20px;
+
+            background: rgba(10, 15, 18, 0.35);
+        }
+
+        h1 {
+            margin: 0 0 30px;
+            text-align: center;
+
+            color: #aeb2b4;
+            font-size: 52px;
+            font-weight: 700;
+        }
+
+        .movies {
+            width: 100%;
+        }
+
+        .movie {
+            height: 58px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: linear-gradient(
+                to bottom,
+                #aaaaaa,
+                #eeeeee
+            );
+
+            border-bottom: 2px solid #222;
+
+            color: #111;
+            font-size: 30px;
+        }
+
+        .movie:first-child {
+            border-top: none;
+        }
+
+        .movie:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 id="main">Favourite <b>Movie</b> Franchise</h1>
+        <!-- <h3>hello</h3> -->
+
+        <ul class="movies">
+            <li class="movie"><span>The </span> Matrix</li>
+            <li class="movie">Star Wars</li>
+            <li class="movie">Harry Potter</li>
+            <li class="movie">Lord of the Rings</li>
+            <li class="movie">Marvel</li>
+        </ul>
+
+    </div>
+
+</body>
+</html>
